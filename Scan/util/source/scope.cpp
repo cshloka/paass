@@ -278,13 +278,14 @@ void scopeScanner::Plot(){
 
 		if(performCfd_){
 			// Find the zero-crossing of the cfd waveform.
-			float cfdCrossing = chanEvents_.front()->AnalyzeCFD(cfdF_, cfdD_, cfdL_);
+			//float cfdCrossing = chanEvents_.front()->AnalyzeCFD(cfdF_, cfdD_, cfdL_);
+			float cfdCrossing = chanEvents_.front()->AnalyzeCFD(cfdF_);
 			
 			// Draw the cfd waveform.
-			for(size_t cfdIndex = 0; cfdIndex < chanEvents_.front()->size; cfdIndex++)
-				cfdGraph->SetPoint((int)cfdIndex, x_vals[cfdIndex], chanEvents_.front()->cfdvals[cfdIndex] + chanEvents_.front()->baseline);
+			//for(size_t cfdIndex = 0; cfdIndex < chanEvents_.front()->size; cfdIndex++)
+				//cfdGraph->SetPoint((int)cfdIndex, x_vals[cfdIndex], chanEvents_.front()->cfdvals[cfdIndex] + chanEvents_.front()->baseline);
 			cfdLine->DrawLine(cfdCrossing*ADC_TIME_STEP, userZoomVals[1][0], cfdCrossing*ADC_TIME_STEP, userZoomVals[1][1]);
-			cfdGraph->Draw("LSAME");
+			//cfdGraph->Draw("LSAME");
 		}
 
 		if(performFit_){
