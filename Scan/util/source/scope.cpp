@@ -131,7 +131,7 @@ scopeScanner::scopeScanner(int mod /*= 0*/, int chan/*=0*/) : ScanInterface() {
 	init = false;
 	running = true;
 	performFit_ = false;
-	performCfd_ = true;
+	performCfd_ = false;
 	numEvents = 20;
 	numAvgWaveforms_ = 1;
 	cfdF_ = 0.5;
